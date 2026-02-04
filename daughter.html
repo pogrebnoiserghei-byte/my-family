@@ -14,7 +14,6 @@
             color: #4a4a4a;
         }
 
-        /* Исправлено: добавлена закрывающая скобка */
         .back-link {
             text-decoration: none;
             color: #ff69b4;
@@ -46,7 +45,7 @@
 
         .story-container {
             max-width: 800px;
-            margin: 0 auto 50px auto;
+            margin: 0 auto 30px auto;
             background: white;
             padding: 30px;
             border-radius: 20px;
@@ -73,9 +72,44 @@
             margin-bottom: 15px;
         }
 
+        /* СТИЛИ СЧЕТЧИКА */
+        .birthday-countdown {
+            background: white;
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+            padding: 20px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.1);
+            border: 2px solid #ffe4e1;
+        }
+
+        .countdown-title {
+            font-size: 1.1rem;
+            color: #ff1493;
+            margin-bottom: 10px;
+        }
+
+        .timer-display {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.2rem;
+            color: #d81b60;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .timer-unit {
+            font-size: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            display: block;
+            color: #795548;
+            margin-top: -5px;
+        }
+
+        /* ГАЛЕРЕЯ */
         .grid-gallery {
             display: grid;
-            /* Настраиваем колонки, чтобы они не раздувались */
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             max-width: 1000px;
@@ -96,7 +130,7 @@
 
         .photo-item img {
             width: 100%;
-            height: 300px; /* Фиксированная высота для стройности */
+            height: 300px;
             object-fit: cover;
             border-radius: 10px;
             display: block;
@@ -128,22 +162,68 @@
         </div>
     </div>
 
+    <div class="birthday-countdown">
+        <div class="countdown-title">До дня рождения Эмильки осталось:</div>
+        <div id="timer" class="timer-display">
+            <div><span id="days">00</span><span class="timer-unit">дней</span></div>
+            <div><span id="hours">00</span><span class="timer-unit">часов</span></div>
+            <div><span id="minutes">00</span><span class="timer-unit">минут</span></div>
+        </div>
+    </div>
+
     <div class="grid-gallery">
         <div class="photo-item">
             <img src="images/изображение_viber_2025-10-31_13-08-27-877.jpg" alt="Эмилька">
             <div class="photo-desc">Маленькая принцесса</div>
         </div>
-
         <div class="photo-item">
             <img src="images/изображение_viber_2025-11-12_13-06-55-870.jpg" alt="Эмилька">
             <div class="photo-desc">Самая добрая улыбка</div>
         </div>
-
         <div class="photo-item">
             <img src="images/изображение_viber_2026-01-28_12-36-13-547.jpg" alt="Эмилька">
             <div class="photo-desc">Наш маленький доктор</div>
         </div>
     </div>
 
+ <script>
+        function updateTimer() {
+            const now = new Date();
+            let currentYear = now.getFullYear();
+            
+            // Устанавливаем дату: 10 Марта (месяц 2)
+            let birthday = new Date(currentYear, 2, 10); 
+            
+            // Если сегодня 10 марта, проверяем, не закончился ли день
+            // Создаем дату конца праздничного дня (11 марта 00:00)
+            let endOfBirthday = new Date(currentYear, 2, 11);
+
+            if (now >= birthday && now < endOfBirthday) {
+                // СОБЫТИЕ: ДЕНЬ РОЖДЕНИЯ СЕГОДНЯ!
+                document.getElementById('timer').innerHTML = 
+                    "<div style='color: #ff1493; width: 100%;'>🎂 С Днём Рождения, Эмилька! 🎈</div>";
+                document.querySelector('.countdown-title').innerText = "Сегодня особенный день!";
+                return;
+            }
+
+            // Если дата уже прошла в этом году, считаем до следующего года
+            if (now >= endOfBirthday) {
+                birthday.setFullYear(currentYear + 1);
+            }
+
+            const diff = birthday - now;
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const m = Math.floor((diff / (1000 * 60)) % 60);
+
+            document.getElementById('days').innerText = d;
+            document.getElementById('hours').innerText = h;
+            document.getElementById('minutes').innerText = m;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
 </body>
 </html>

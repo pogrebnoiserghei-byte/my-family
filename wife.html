@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя Любимая — Хранительница очага</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff9fb; /* Очень нежный пудровый фон */
+            margin: 0;
+            padding: 40px;
+            color: #5d4037;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #ad1457;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid #ad1457;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            background: #ad1457;
+            color: white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            color: #880e4f;
+            margin: 10px 0;
+        }
+
+        .story-container {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(173, 20, 87, 0.1);
+            line-height: 1.8;
+            border-left: 5px solid #ad1457;
+        }
+
+        .story-title {
+            font-family: 'Pacifico', cursive;
+            color: #ad1457;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Галерея */
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .photo-item {
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.4s;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .photo-desc {
+            padding: 15px 5px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* Падающие цветы для мамы */
+        .flower {
+            position: fixed;
+            top: -10px;
+            color: #f48fb1;
+            font-size: 25px;
+            user-select: none;
+            z-index: 1000;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← На главную</a>
+
+    <div class="header">
+        <h1>Моя Любимая Жена</h1>
+        <p>Сердце и душа нашей семьи</p>
+    </div>
+
+    <div class="story-container">
+        <h2 class="story-title">О ней</h2>
+        <div class="story-text">
+            Она — та, кто наполняет наш дом уютом, а наши сердца — любовью. 
+            Самая мудрая мама и самая прекрасная женщина. Спасибо тебе за всё, что ты делаешь для нас!
+        </div>
+    </div>
+
+    <div class="grid-gallery">
+        <div class="photo-item">
+            <img src="images/изображение_viber_2026-02-04_13-20-55-496.jpg" alt="Моя жена">
+            <div class="photo-desc">Самая красивая</div>
+        </div>
+        <div class="photo-item">
+            <img src="images/изображение_viber_2026-02-04_13-20-55-385.jpg" alt="Моя жена">
+            <div class="photo-desc">Моя поддержка</div>
+        </div>
+        <div class="photo-item">
+            <img src="images/изображение_viber_2026-02-04_13-20-55-470.jpg" alt="Моя жена">
+            <div class="photo-desc">Моя шикарная</div>
+        </div>
+    </div>
+
+    <script>
+        function createFlower() {
+            const flower = document.createElement('div');
+            flower.classList.add('flower');
+            flower.innerHTML = '🌸'; 
+            flower.style.left = Math.random() * 100 + "vw";
+            flower.style.animationDuration = Math.random() * 5 + 3 + "s";
+            document.body.appendChild(flower);
+            setTimeout(() => { flower.remove(); }, 6000);
+        }
+        setInterval(createFlower, 500);
+    </script>
+
+</body>
+</html>

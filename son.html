@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Сын — Стёпка</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 40px;
+            color: #2c3e50;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid #3498db;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            color: #2980b9;
+            margin: 10px 0;
+        }
+
+        .story-container {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.1);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .story-container::before {
+            content: "★";
+            font-size: 50px;
+            color: #ebf5fb;
+            position: absolute;
+            top: 5px;
+            left: 20px;
+        }
+
+        .story-title {
+            font-family: 'Pacifico', cursive;
+            color: #2980b9;
+            font-size: 1.8rem;
+            border-bottom: 2px dashed #d6eaf8;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Галерея: исправленная сетка */
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .photo-item {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Делаем все фото одинаковыми по размеру */
+        .photo-item img {
+            width: 100%;
+            height: 300px; /* Фиксированная высота */
+            object-fit: cover; /* Обрезает края, сохраняя пропорции центра */
+            border-radius: 10px;
+            display: block;
+        }
+
+        .photo-desc {
+            padding: 15px 5px 5px 5px;
+            text-align: center;
+            font-weight: 400;
+            color: #34495e;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← На главную</a>
+
+    <div class="header">
+        <h1>Наш Стёпка</h1>
+        <p>Маленькие приключения большого героя</p>
+    </div>
+
+    <div class="story-container">
+        <h2 class="story-title">О Стёпе</h2>
+        <div class="story-text">
+            Стёпка — это неиссякаемый источник энергии и любопытства! 
+            Он любит собирать конструкторы, играть в футбол и узнавать, 
+            как устроены вещи вокруг него. Каждый день с ним — это новое приключение.
+        </div>
+    </div>
+
+    <div class="grid-gallery">
+        
+        <div class="photo-item">
+            <img src="C:\Users\SCSH\Desktop\MyFamilySite\images\изображение_viber_2026-02-04_10-58-25-480.jpg" alt="Стёпка">
+            <div class="photo-desc">10 лет</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="C:\Users\SCSH\Desktop\MyFamilySite\images\изображение_viber_2026-02-04_10-59-13-610.jpg" alt="Стёпка">
+            <div class="photo-desc">Умница</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="C:\Users\SCSH\Desktop\MyFamilySite\images\изображение_viber_2026-02-04_11-00-42-046.jpg" alt="Стёпка">
+            <div class="photo-desc">Спортсмен</div>
+        </div>
+
+    </div> </body>
+</html>

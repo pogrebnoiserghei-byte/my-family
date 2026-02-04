@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши Девочки</title>
+    <style>
+        body {
+            /* Теперь основной текст будет Montserrat */
+            font-family: 'Montserrat', sans-serif; 
+            background-color: #fff5f8;
+            margin: 0;
+            padding: 40px;
+            color: #4a4a4a;
+            font-weight: 300;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #d81b60;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid #d81b60;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            background: #d81b60;
+            color: white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            /* Заголовок станет рукописным */
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            color: #d81b60;
+            margin: 10px 0;
+            font-weight: normal;
+        }
+
+        /* Стиль для блока с историей */
+        .story-container {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(216, 27, 96, 0.1);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .story-container::before {
+            content: "“";
+            font-size: 80px;
+            color: #fce4ec;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        .story-title {
+            /* Подзаголовок в истории тоже сделаем красивым */
+            font-family: 'Pacifico', cursive;
+            color: #d81b60;
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 2px dashed #fce4ec;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .story-text {
+            font-size: 1.15rem;
+            color: #555;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Сетка галереи */
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .photo-item {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.03);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .photo-desc {
+            padding: 15px 5px;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Назад на главную</a>
+
+    <div class="header">
+        <h1>Мои Девочки</h1>
+        <p>Самые теплые моменты и улыбки</p>
+    </div>
+
+    <div class="story-container">
+        <h2 class="story-title">Наша история</h2>
+        <div class="story-text">
+            Мама и Эмилька — не просто родные люди, а настоящие подружки. 
+            Они обожают вместе гулять, читать сказки перед сном и 
+            устраивать домашние танцы. Каждое фото в этой галерее — это частичка 
+            их общего счастья и тепла.
+        </div>
+    </div>
+
+   <div class="grid-gallery">
+        <div class="photo-item">
+            <img src="C:\Users\SCSH\Desktop\MyFamilySite\images\изображение_viber_2026-02-02_09-54-47-265.jpg" alt="Мама и доча">
+            <div class="photo-desc">Мама и Эмилька</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="C:\Users\SCSH\Desktop\MyFamilySite\images\изображение_viber_2025-10-31_13-08-28-420.jpg" alt="Веселая прогулка">
+            <div class="photo-desc">Веселая прогулка</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="C:\Users\SCSH\Desktop\MyFamilySite\images\изображение_viber_2025-12-29_12-43-18-559.jpg" alt="Праздничный день">
+            <div class="photo-desc">Праздничный день</div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+ 
+
